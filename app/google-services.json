@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "698473394023",
+    "project_id": "twitterclonelast",
+    "storage_bucket": "twitterclonelast.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698473394023:android:2ce47623ed4f69408e89c2",
+        "android_client_info": {
+          "package_name": "com.sengun.twitterlast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698473394023-2b0dmv0mhdgqofd57mnoro24qqsn86g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYe4zAL-_cSOuaUg63-q3eyBxaLYfuzDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698473394023-2b0dmv0mhdgqofd57mnoro24qqsn86g1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/col"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FeedActivity">
+
+    <Button
+        android:id="@+id/tweetShare1"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="580dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="54dp"
+        android:background="@drawable/tweershare"
+        android:onClick="tweetShareClicked1" />
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/profilFoto"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/btnround"
+            android:onClick="profilFotoClick"
+            android:layout_gravity="left"
+            android:layout_marginEnd="20dp"/>
+
+        <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_twitter" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tweets_refresh_layout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewTweets"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            ></LinearLayout>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#020202"
+        app:backgroundTint="#FFFFFF" app:menu="@menu/menu" />
+
+
+
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/container_user_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/profilFoto1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/btnround"
+                            android:layout_gravity="left"
+                            android:layout_marginEnd="20dp" />
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="{user.name}"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_username"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_name"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="{@username}"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_followers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_username"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Not yet showing followers"
+                            android:textSize="15sp" />
+
+
+                    </RelativeLayout>
+
+
+                    <ScrollView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/container_user_info">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/Profil"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_baseline_account_box_24"
+                                android:drawablePadding="15dp"
+                                android:gravity="start|center_vertical"
+                                android:onClick="ProfilClick"
+                                android:paddingStart="23dp"
+                                android:text="Profile"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textSize="14sp" />
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_baseline_list_alt_24"
+                                android:drawablePadding="15dp"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Listeler"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textSize="14sp" />
+
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_baseline_bookmark_border_24"
+                                android:drawablePadding="15dp"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Yer işaretleri"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textSize="14sp" />
+
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_baseline_message_24"
+                                android:drawablePadding="15dp"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Konular"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textSize="14sp" />
+
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_baseline_flash_on_24"
+                                android:drawablePadding="15dp"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Anlar"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textSize="14sp" />
+
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawableStart="@drawable/ic_baseline_monetization_on_24"
+                                android:drawablePadding="15dp"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Gelire dönüştürme"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/settings"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawablePadding="15dp"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Ayarlar ve gizlilik"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/support"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawablePadding="15dp"
+                                android:gravity="start|center_vertical"
+                                android:paddingStart="23dp"
+                                android:text="Yardım Merkezi"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/cikisYap"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:layout_gravity="start"
+                                android:drawablePadding="15dp"
+                                android:gravity="start|center_vertical"
+                                android:onClick="cikisYapClick"
+                                android:paddingStart="23dp"
+                                android:text="Çıkış yap"
+                                android:textAlignment="textStart"
+                                android:textAllCaps="false"
+                                android:textSize="14sp" />
+
+
+                        </LinearLayout>
+
+
+                    </ScrollView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.navigation.NavigationView>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</RelativeLayout>
